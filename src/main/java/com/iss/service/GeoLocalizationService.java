@@ -27,6 +27,4 @@ public class GeoLocalizationService {
         String longitude = response.getLocation().getLongitude().toString();
         return new GeoIP(ip, cityName, latitude, longitude);
     }
-
-
 }

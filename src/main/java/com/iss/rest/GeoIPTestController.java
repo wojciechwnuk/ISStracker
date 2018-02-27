@@ -1,6 +1,7 @@
 package com.iss.rest;
 
 import com.iss.domain.GeoIP;
+import com.iss.helper.GlobalIp;
 import com.iss.service.GeoLocalizationService;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +15,11 @@ public class GeoIPTestController {
         locationService = new GeoLocalizationService();
     }
 
-    @PostMapping("/GeoIPTest")
-    public GeoIP getLocation(@RequestParam String ipAddress) throws Exception {
+    @GetMapping("/GeoIPTest")
+    public GeoIP getLocation() throws Exception {
+
+        GlobalIp globalIp = new GlobalIp();
+        String ipAddress = globalIp.getGlobalIp();
 
         return locationService.getLocation(ipAddress);
     }
