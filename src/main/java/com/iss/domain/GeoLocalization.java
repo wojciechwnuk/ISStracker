@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class GeoIP {
+public class GeoLocalization {
 
     private String ipAddress;
     private String city;
